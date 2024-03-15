@@ -1,0 +1,37 @@
+@use "package" as p;
+/*
+  * mixins
+  c-* colours
+  f-* functions
+  v-* variables
+*/
+@layer base {
+  :root {
+    font-size: p.$v-font-size-base;
+  }
+  body {
+    font-family: p.$v-font-family;
+    color: p.$c-text-primary;
+    background: p.$c-white;
+  }
+  a {
+    @include p.anchor;
+  }
+  button {
+    @include p.button();
+  }
+  .card {
+    @include p.card;
+  }
+}
+@layer reset, base;
+
+body {
+  padding: 3rem;
+  @include p.flex($direction: column, $gap: 1rem);
+}
+.card {
+  &--wide {
+    @include p.button($color: p.$c-black-2, $background: p.$c-gray-2);
+  }
+}
