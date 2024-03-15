@@ -1,0 +1,15 @@
+@use "component-mixins" as m;
+@use "variables/colors" as c;
+
+@layer component {
+  a {
+    @include m.anchor;
+  }
+  button {
+    @include m.button();
+  }
+  .card {
+    @include m.card;
+    color: c.$black;
+  }
+}

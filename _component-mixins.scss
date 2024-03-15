@@ -1,5 +1,5 @@
-@use "colors" as c;
-@use "variables" as v;
+@use "variables/colors" as c;
+@use "variables/variables" as v;
 @use "functions" as f;
 @use "util-mixins" as m;
 @use 'sass:color';

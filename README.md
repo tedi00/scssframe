@@ -33,12 +33,14 @@ separate in the SCSS files, and not bleeding into HTML.
 ### Usage guideline examples and explanations
 
 #### Good:
+
 ```scss
-@use "package" as p;
+@use "preparatory/package" as p;
+
 .card { /* semantic class name */
-    @include p.card; /* card mixin */
-    color: p.$c-black;
-    background-color: p.$c-white-2; /* color through variable */
+  @include p.card; /* card mixin */
+  color: p.$c-black;
+  background-color: p.$c-white-2; /* color through variable */
 }
 ```
 ### Bad:

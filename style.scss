@@ -1,4 +1,4 @@
-@use "package" as p;
+@use "preparatory/package" as p;
 /*
   * mixins
   c-* colours
@@ -14,17 +14,8 @@
     color: p.$c-text-primary;
     background: p.$c-white;
   }
-  a {
-    @include p.anchor;
-  }
-  button {
-    @include p.button();
-  }
-  .card {
-    @include p.card;
-  }
 }
-@layer reset, base;
+@layer reset, base, component;
 
 body {
   padding: 3rem;
