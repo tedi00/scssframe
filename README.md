@@ -9,9 +9,11 @@ less thinking required for devs.
 * Configure colors and variables
 * Read through `util-mixins`
 * Check `component-mixins` if your generic component is there, if not, create
-* Add mixins you need and other custom styles to your semantic CSS classes
+* Add mixins, functions and variables you need and other custom styles to your 
+semantic CSS classes
 
 All you need is an understanding of CSS.
+See [dev notes](#dev-notes) for a manifesto.
 
 ## Usage guidelines
 
@@ -35,6 +37,7 @@ separate in the SCSS files, and not bleeding into HTML.
 @use "package" as p;
 .card { /* semantic class name */
     @include p.card; /* card mixin */
+    color: p.$c-black;
     background-color: p.$c-white-2; /* color through variable */
 }
 ```
@@ -48,3 +51,25 @@ separate in the SCSS files, and not bleeding into HTML.
   color: orangered;
 }
 ```
+
+## Dev notes
+
+While using utility classes has been the standard for a long time, it is also
+a bad way to get comfortable developing websites.
+
+Bootstrap and tailwind abstract away CSS, leaving us with only a basic understanding,
+lazy way to develop, and breaking separation of concerns, while component frameworks 
+like Angular Material, as customizable as they are, still lead us to web apps that 
+look and feel the same every time.
+
+Some internal projects may pass this low bar, but every project from an outside 
+brand/company - as well as internal projects of any highly reputable development 
+team/company - will undeniably require highly customized components and complex 
+styles based on usage concerns as well as web designers' preferences and ideas.
+
+Creating projects where multiple people work together in harmony with only SCSS
+can be challenging, as everyone has the urge to write their own styles. This is
+why the usage guidelines for this internal framework were developed to help developers
+reuse each other's variables, mixins, functions, etc. in order to work in sync
+without the need to keep each other updated through meetings all the time.
+
