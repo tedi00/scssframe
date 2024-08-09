@@ -11,12 +11,13 @@
   $border: v.$button-border,
   $border-radius: v.$button-border-radius,
   $important: false) {
+  $i: f.imp($important);
   cursor: pointer;
-  color: #{$color} f.imp($important);
-  background: #{$background} f.imp($important);
-  padding: #{$padding} f.imp($important);
-  border: #{$border} f.imp($important);
-  border-radius: $border-radius f.imp($important);
+  color: #{$color} $i;
+  background: #{$background} $i;
+  padding: #{$padding} $i;
+  border: #{$border} $i;
+  border-radius: $border-radius $i;
   &:hover {
     background: color.scale($background, $lightness: -15%);
   }
